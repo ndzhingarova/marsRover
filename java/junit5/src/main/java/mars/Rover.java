@@ -40,4 +40,30 @@ public class Rover {
                 break;
         }
     }
+
+    public void moveBackward() {
+        switch (this.direction) {
+            case NORTH:
+                this.positionY--;
+                break;
+            case EAST:
+                this.positionX--;
+                break;
+            case SOUTH:
+                this.positionY++;
+                break;
+            case WEST:
+                this.positionX++;
+                break;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Rover{" +
+                "positionX=" + positionX +
+                ", positionY=" + positionY +
+                ", direction=" + direction +
+                '}';
+    }
 }

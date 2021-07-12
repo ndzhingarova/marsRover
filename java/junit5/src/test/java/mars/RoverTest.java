@@ -34,4 +34,44 @@ class RoverTest {
         assertEquals(expectedPositionY, rover.getPositionY());
         assertEquals(Direction.fromString(expectedDirection), rover.getDirection());
     }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/moveFWD.csv", numLinesToSkip = 1)
+    void moveForwardCommand(
+            int positionX,
+            int positionY,
+            String direction,
+            int expectedPositionX,
+            int expectedPositionY,
+            String expectedDirection) {
+        Rover rover = new Rover(positionX,positionY, direction);
+        RoverCommand moveForward = new MoveForwardCommand(rover);
+
+        CommandExecutor commandExecutor = new CommandExecutor();
+        commandExecutor.executeCommand(moveForward);
+
+        assertEquals(expectedPositionX, rover.getPositionX());
+        assertEquals(expectedPositionY, rover.getPositionY());
+        assertEquals(Direction.fromString(expectedDirection), rover.getDirection());
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/moveBWD.csv", numLinesToSkip = 1)
+    void moveBackwardCommand(
+            int positionX,
+            int positionY,
+            String direction,
+            int expectedPositionX,
+            int expectedPositionY,
+            String expectedDirection) {
+        Rover rover = new Rover(positionX,positionY, direction);
+        RoverCommand moveBackward = new MoveBackwardComand(rover);
+
+        CommandExecutor commandExecutor = new CommandExecutor();
+        commandExecutor.executeCommand(moveBackward);
+
+        assertEquals(expectedPositionX, rover.getPositionX());
+        assertEquals(expectedPositionY, rover.getPositionY());
+        assertEquals(Direction.fromString(expectedDirection), rover.getDirection());
+    }
 }
