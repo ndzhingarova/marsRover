@@ -13,15 +13,20 @@ public class Rover {
     }
 
     public Integer getPositionX() {
-        return positionX;
+        return this.positionX;
     }
 
     public Integer getPositionY() {
-        return positionY;
+        return this.positionY;
     }
 
     public Direction getDirection() {
         return direction;
+    }
+
+    public void moveForward2() {
+        StepInstruction stepInstruction = this.direction.moveFWD();
+
     }
 
     public void moveForward() {
