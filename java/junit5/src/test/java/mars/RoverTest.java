@@ -1,5 +1,6 @@
 package mars;
 
+import mars.direction.Direction;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -8,14 +9,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class RoverTest {
 
     @ParameterizedTest
-//    @CsvSource(value = {"0,0,NORTH", "10,145,EAST", "3256,10246,SOUTH", "124,145,WEST"})
     @CsvFileSource(resources = "/startingPosition.csv", numLinesToSkip = 1)
     void testStartingPoint(int positionX, int positionY, String direction) {
         Rover rover = new Rover(positionX, positionY, direction);
 
         assertEquals(positionX, rover.getPositionX());
         assertEquals(positionY, rover.getPositionY());
-        assertEquals(Direction.fromString(direction), rover.getDirection());
+        assertEquals(Direction.fromString(direction), rover.getRoverDirection());
     }
 
     @ParameterizedTest
@@ -32,7 +32,7 @@ class RoverTest {
 
         assertEquals(expectedPositionX, rover.getPositionX());
         assertEquals(expectedPositionY, rover.getPositionY());
-        assertEquals(Direction.fromString(expectedDirection), rover.getDirection());
+        assertEquals(Direction.fromString(expectedDirection), rover.getRoverDirection());
     }
 
     @ParameterizedTest
@@ -52,7 +52,7 @@ class RoverTest {
 
         assertEquals(expectedPositionX, rover.getPositionX());
         assertEquals(expectedPositionY, rover.getPositionY());
-        assertEquals(Direction.fromString(expectedDirection), rover.getDirection());
+        assertEquals(Direction.fromString(expectedDirection), rover.getRoverDirection());
     }
 
     @ParameterizedTest
@@ -72,6 +72,6 @@ class RoverTest {
 
         assertEquals(expectedPositionX, rover.getPositionX());
         assertEquals(expectedPositionY, rover.getPositionY());
-        assertEquals(Direction.fromString(expectedDirection), rover.getDirection());
+        assertEquals(Direction.fromString(expectedDirection), rover.getRoverDirection());
     }
 }

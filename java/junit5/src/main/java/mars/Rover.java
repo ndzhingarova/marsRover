@@ -1,15 +1,18 @@
 package mars;
 
+import mars.direction.Direction;
+import mars.direction.RoverDirection;
+
 public class Rover {
 
     private Integer positionX;
     private Integer positionY;
-    private Direction direction;
+    private RoverDirection roverDirection;
 
     public Rover(Integer positionX, Integer positionY, String direction) {
         this.positionX = positionX;
         this.positionY = positionY;
-        this.direction = Direction.fromString(direction);
+        this.roverDirection = Direction.fromString(direction);
     }
 
     public Integer getPositionX() {
@@ -20,47 +23,16 @@ public class Rover {
         return this.positionY;
     }
 
-    public Direction getDirection() {
-        return direction;
-    }
-
-    public void moveForward2() {
-        StepInstruction stepInstruction = this.direction.moveFWD();
-
+    public RoverDirection getRoverDirection() {
+        return roverDirection;
     }
 
     public void moveForward() {
-        switch (this.direction) {
-            case NORTH:
-                this.positionY++;
-                break;
-            case EAST:
-                this.positionX++;
-                break;
-            case SOUTH:
-                this.positionY--;
-                break;
-            case WEST:
-                this.positionX--;
-                break;
-        }
+        this.roverDirection.moveForward(this);
     }
 
     public void moveBackward() {
-        switch (this.direction) {
-            case NORTH:
-                this.positionY--;
-                break;
-            case EAST:
-                this.positionX--;
-                break;
-            case SOUTH:
-                this.positionY++;
-                break;
-            case WEST:
-                this.positionX++;
-                break;
-        }
+        this.roverDirection.moveBackward(this);
     }
 
     @Override
@@ -68,7 +40,25 @@ public class Rover {
         return "Rover{" +
                 "positionX=" + positionX +
                 ", positionY=" + positionY +
-                ", direction=" + direction +
+                ", roverDirection=" + roverDirection +
                 '}';
     }
+
+    public void moveEast() {
+        this.positionX++;
+    }
+
+
+    public void moveWest() {
+        this.positionX--;
+    }
+
+    public void moveNorth() {
+        this.positionY++;
+    }
+
+    public void moveSouth() {
+        this.positionY--;
+    }
+
 }

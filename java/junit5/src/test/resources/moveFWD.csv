@@ -1,5 +1,9 @@
 positionX,positionY,direction,expectedPositionX,expectedPositionY,expectedDirection
 10,10,NORTH,10,11,NORTH
-10,10,EAST,11,10,e
+10,10,EAST,11,10,EAST
 10,10,SOUTH,10,9,s
 10,10,WEST,9,10,w
+10,10,NORTH,10,11,north
+10,10,EAST,11,10,east
+10,10,SOUTH,10,9,S
+10,10,WEST,9,10,W
