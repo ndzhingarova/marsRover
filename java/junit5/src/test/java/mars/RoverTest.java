@@ -1,6 +1,7 @@
 package mars;
 
 import mars.direction.Direction;
+import mars.direction.Rover;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 

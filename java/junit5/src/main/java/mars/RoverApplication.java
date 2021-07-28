@@ -1,5 +1,7 @@
 package mars;
 
+import mars.direction.Rover;
+
 public class RoverApplication {
     public static void main(String []args) {
         Rover rover = new Rover(10,10,"e");

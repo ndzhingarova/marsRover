@@ -1,7 +1,5 @@
 package mars.direction;
 
-import mars.Rover;
-
 public class South implements RoverDirection{
     @Override
     public void moveForward(Rover rover) {
