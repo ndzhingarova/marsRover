@@ -24,12 +24,12 @@ public class Rover {
         return roverDirection;
     }
 
-    public void moveForward() {
-        this.roverDirection.moveForward(this);
+    public void goForward() {
+        this.roverDirection.goForward(this);
     }
 
-    public void moveBackward() {
-        this.roverDirection.moveBackward(this);
+    public void goBackward() {
+        this.roverDirection.goBackward(this);
     }
 
     public void turnRight() {

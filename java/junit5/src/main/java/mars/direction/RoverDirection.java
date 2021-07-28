@@ -2,9 +2,9 @@ package mars.direction;
 
 public interface RoverDirection {
 
-    void moveForward(Rover rover);
+    void goForward(Rover rover);
 
-    void moveBackward(Rover rover);
+    void goBackward(Rover rover);
 
     void turnRight(Rover rover);
 

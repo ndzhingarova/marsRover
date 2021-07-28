@@ -21,7 +21,7 @@ class RoverTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/moveFWD.csv", numLinesToSkip = 1)
-    void moveForward(
+    void goForward(
             int positionX,
             int positionY,
             String direction,
@@ -29,7 +29,7 @@ class RoverTest {
             int expectedPositionY,
             String expectedDirection) {
         Rover rover = new Rover(positionX,positionY, direction);
-        rover.moveForward();
+        rover.goForward();
 
         assertEquals(expectedPositionX, rover.getPositionX());
         assertEquals(expectedPositionY, rover.getPositionY());
@@ -38,7 +38,7 @@ class RoverTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/moveBWD.csv", numLinesToSkip = 1)
-    void moveBackwardCommand(
+    void goBackward(
             int positionX,
             int positionY,
             String direction,
@@ -46,7 +46,7 @@ class RoverTest {
             int expectedPositionY,
             String expectedDirection) {
         Rover rover = new Rover(positionX,positionY, direction);
-        rover.moveBackward();
+        rover.goBackward();
 
         assertEquals(expectedPositionX, rover.getPositionX());
         assertEquals(expectedPositionY, rover.getPositionY());
@@ -55,7 +55,7 @@ class RoverTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/turnRight.csv", numLinesToSkip = 1)
-    void turnRightCommand(
+    void turnRight(
             int positionX,
             int positionY,
             String direction,
@@ -68,7 +68,7 @@ class RoverTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/turnLeft.csv", numLinesToSkip = 1)
-    void turnLeftCommand(
+    void turnLeft(
             int positionX,
             int positionY,
             String direction,

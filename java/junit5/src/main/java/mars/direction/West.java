@@ -2,12 +2,12 @@ package mars.direction;
 
 public class West implements RoverDirection {
     @Override
-    public void moveForward(Rover rover) {
+    public void goForward(Rover rover) {
         rover.moveWest();
     }
 
     @Override
-    public void moveBackward(Rover rover) {
+    public void goBackward(Rover rover) {
         rover.moveEast();
     }
 
