@@ -9,6 +9,22 @@ public class Coordinates {
         this.positionY = positionY;
     }
 
+    public Coordinates moveEast() {
+        return new Coordinates(this.getPositionX()+1, this.getPositionY());
+    }
+
+    public Coordinates moveWest() {
+        return new Coordinates(this.getPositionX()-1, this.getPositionY());
+    }
+
+    public Coordinates moveNorth() {
+        return new Coordinates(this.getPositionX(), this.getPositionY()+1);
+    }
+
+    public Coordinates moveSouth() {
+        return new Coordinates(this.getPositionX(), this.getPositionY()-1);
+    }
+
     public Integer getPositionX() {
         return positionX;
     }

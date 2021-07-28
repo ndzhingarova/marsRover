@@ -50,22 +50,6 @@ public class Rover {
                 '}';
     }
 
-    void moveEast() {
-        this.coordinates = new Coordinates(this.getCoordinates().getPositionX()+1, this.getCoordinates().getPositionY());
-    }
-
-    void moveWest() {
-        this.coordinates = new Coordinates(this.getCoordinates().getPositionX()-1, this.getCoordinates().getPositionY());
-    }
-
-    void moveNorth() {
-        this.coordinates = new Coordinates(this.getCoordinates().getPositionX(), this.getCoordinates().getPositionY()+1);
-    }
-
-    void moveSouth() {
-        this.coordinates = new Coordinates(this.getCoordinates().getPositionX(), this.getCoordinates().getPositionY()-1);
-    }
-
     public void move(String command) {
         switch (command) {
             case "F":
