@@ -12,13 +12,13 @@ public class West implements RoverDirection {
     }
 
     @Override
-    public void turnRight(Rover rover) {
-        rover.turnNorth();
+    public RoverDirection turnRight() {
+        return new North();
     }
 
     @Override
-    public void turnLeft(Rover rover) {
-        rover.turnSouth();
+    public RoverDirection turnLeft() {
+        return new South();
     }
 
     @Override

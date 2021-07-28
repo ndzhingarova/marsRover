@@ -6,7 +6,7 @@ public interface RoverDirection {
 
     void goBackward(Rover rover);
 
-    void turnRight(Rover rover);
+    RoverDirection turnRight();
 
-    void turnLeft(Rover rover);
+    RoverDirection turnLeft();
 }

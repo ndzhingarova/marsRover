@@ -33,11 +33,11 @@ public class Rover {
     }
 
     public void turnRight() {
-        this.roverDirection.turnRight(this);
+        this.roverDirection = this.roverDirection.turnRight();
     }
 
     public void turnLeft() {
-        this.roverDirection.turnLeft(this);
+        this.roverDirection = this.roverDirection.turnLeft();
     }
 
     @Override
@@ -79,5 +79,23 @@ public class Rover {
 
     void turnSouth() {
         this.roverDirection = new South();
+    }
+
+    public void move(String command) {
+        switch (command) {
+            case "F":
+                this.goForward();
+                break;
+            case "B":
+                this.goBackward();
+                break;
+            case "R":
+                this.turnRight();
+                break;
+            case "L":
+                this.turnLeft();
+                break;
+            default:
+        }
     }
 }
