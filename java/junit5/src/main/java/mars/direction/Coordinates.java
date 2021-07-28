@@ -1,5 +1,7 @@
 package mars.direction;
 
+import java.util.Objects;
+
 public class Coordinates {
     private Integer positionX;
     private Integer positionY;
@@ -31,6 +33,19 @@ public class Coordinates {
 
     public Integer getPositionY() {
         return positionY;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Coordinates that = (Coordinates) o;
+        return Objects.equals(positionX, that.positionX) && Objects.equals(positionY, that.positionY);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(positionX, positionY);
     }
 
     @Override

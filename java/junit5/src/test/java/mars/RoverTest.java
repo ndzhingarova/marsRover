@@ -1,6 +1,5 @@
 package mars;
 
-import mars.direction.Direction;
 import mars.direction.Rover;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -14,9 +13,11 @@ class RoverTest {
     void testStartingPoint(int positionX, int positionY, String direction) {
         Rover rover = new Rover(positionX, positionY, direction);
 
-        assertEquals(positionX, rover.getPositionX());
-        assertEquals(positionY, rover.getPositionY());
-        assertEquals(Direction.fromString(direction), rover.getRoverDirection());
+//        assertEquals(new Coordinates(positionX, positionY), rover.getCoordinates());
+//        assertEquals(Direction.fromString(direction), rover.getRoverDirection());
+
+        Rover expected = new Rover(positionX, positionY, direction);
+        assertEquals(expected, rover);
     }
 
     @ParameterizedTest
@@ -31,9 +32,8 @@ class RoverTest {
         Rover rover = new Rover(positionX,positionY, direction);
         rover.goForward();
 
-        assertEquals(expectedPositionX, rover.getPositionX());
-        assertEquals(expectedPositionY, rover.getPositionY());
-        assertEquals(Direction.fromString(expectedDirection), rover.getRoverDirection());
+        Rover expected = new Rover(expectedPositionX, expectedPositionY, expectedDirection);
+        assertEquals(expected, rover);
     }
 
     @ParameterizedTest
@@ -48,9 +48,8 @@ class RoverTest {
         Rover rover = new Rover(positionX,positionY, direction);
         rover.goBackward();
 
-        assertEquals(expectedPositionX, rover.getPositionX());
-        assertEquals(expectedPositionY, rover.getPositionY());
-        assertEquals(Direction.fromString(expectedDirection), rover.getRoverDirection());
+        Rover expected = new Rover(expectedPositionX, expectedPositionY, expectedDirection);
+        assertEquals(expected, rover);
     }
 
     @ParameterizedTest
@@ -63,7 +62,9 @@ class RoverTest {
 
         Rover rover = new Rover(positionX,positionY, direction);
         rover.turnRight();
-        assertEquals(Direction.fromString(expectedDirection), rover.getRoverDirection());
+
+        Rover expected = new Rover(positionX, positionY, expectedDirection);
+        assertEquals(expected, rover);
     }
 
     @ParameterizedTest
@@ -76,7 +77,9 @@ class RoverTest {
 
         Rover rover = new Rover(positionX,positionY, direction);
         rover.turnLeft();
-        assertEquals(Direction.fromString(expectedDirection), rover.getRoverDirection());
+
+        Rover expected = new Rover(positionX, positionY, expectedDirection);
+        assertEquals(expected, rover);
     }
 
     @ParameterizedTest
@@ -93,8 +96,7 @@ class RoverTest {
         Rover rover = new Rover(positionX,positionY, direction);
         rover.move(command);
 
-        assertEquals(expectedPositionX, rover.getPositionX());
-        assertEquals(expectedPositionY, rover.getPositionY());
-        assertEquals(Direction.fromString(expectedDirection), rover.getRoverDirection());
+        Rover expected = new Rover(expectedPositionX, expectedPositionY, expectedDirection);
+        assertEquals(expected, rover);
     }
 }
