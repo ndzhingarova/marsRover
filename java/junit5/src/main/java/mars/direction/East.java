@@ -1,5 +1,7 @@
 package mars.direction;
 
+import java.util.Objects;
+
 public class East implements RoverDirection {
     @Override
     public Coordinates goForward(Coordinates coordinates) {
@@ -23,11 +25,16 @@ public class East implements RoverDirection {
 
     @Override
     public String toString() {
-        return "East";
+        return getClass().getSimpleName();
     }
 
     @Override
     public boolean equals(Object obj) {
         return obj instanceof East;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(toString());
     }
 }

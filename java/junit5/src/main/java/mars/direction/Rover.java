@@ -41,7 +41,8 @@ public class Rover {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Rover rover = (Rover) o;
-        return Objects.equals(coordinates, rover.coordinates) && Objects.equals(roverDirection, rover.roverDirection);
+        return Objects.equals(coordinates, rover.coordinates)
+                && Objects.equals(roverDirection, rover.roverDirection);
     }
 
     @Override

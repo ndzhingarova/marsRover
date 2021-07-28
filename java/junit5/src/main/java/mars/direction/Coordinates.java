@@ -27,11 +27,11 @@ public class Coordinates {
         return new Coordinates(this.getPositionX(), this.getPositionY()-1);
     }
 
-    public Integer getPositionX() {
+    private Integer getPositionX() {
         return positionX;
     }
 
-    public Integer getPositionY() {
+    private Integer getPositionY() {
         return positionY;
     }
 
