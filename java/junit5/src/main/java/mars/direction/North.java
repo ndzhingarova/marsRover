@@ -2,13 +2,13 @@ package mars.direction;
 
 public class North implements RoverDirection{
     @Override
-    public void goForward(Rover rover) {
-        rover.moveNorth();
+    public Coordinates goForward(Coordinates coordinates) {
+        return new Coordinates(coordinates.getPositionX(), coordinates.getPositionY()+1);
     }
 
     @Override
-    public void goBackward(Rover rover) {
-        rover.moveSouth();
+    public Coordinates goBackward(Coordinates coordinates) {
+        return new Coordinates(coordinates.getPositionX(), coordinates.getPositionY()-1);
     }
 
     @Override

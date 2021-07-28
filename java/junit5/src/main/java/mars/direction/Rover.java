@@ -2,22 +2,24 @@ package mars.direction;
 
 public class Rover {
 
-    private Integer positionX;
-    private Integer positionY;
+    private Coordinates coordinates;
     private RoverDirection roverDirection;
 
     public Rover(Integer positionX, Integer positionY, String direction) {
-        this.positionX = positionX;
-        this.positionY = positionY;
+        this.coordinates = new Coordinates(positionX, positionY);
         this.roverDirection = Direction.fromString(direction);
     }
 
     public Integer getPositionX() {
-        return this.positionX;
+        return this.getCoordinates().getPositionX();
     }
 
     public Integer getPositionY() {
-        return this.positionY;
+        return this.getCoordinates().getPositionY();
+    }
+
+    public Coordinates getCoordinates() {
+        return coordinates;
     }
 
     public RoverDirection getRoverDirection() {
@@ -25,11 +27,11 @@ public class Rover {
     }
 
     public void goForward() {
-        this.roverDirection.goForward(this);
+        this.coordinates = this.roverDirection.goForward(this.coordinates);
     }
 
     public void goBackward() {
-        this.roverDirection.goBackward(this);
+        this.coordinates = this.roverDirection.goBackward(this.coordinates);
     }
 
     public void turnRight() {
@@ -43,42 +45,25 @@ public class Rover {
     @Override
     public String toString() {
         return "Rover{" +
-                "positionX=" + positionX +
-                ", positionY=" + positionY +
+                "coordinates=" + coordinates +
                 ", roverDirection=" + roverDirection +
                 '}';
     }
 
     void moveEast() {
-        this.positionX++;
+        this.coordinates = new Coordinates(this.getCoordinates().getPositionX()+1, this.getCoordinates().getPositionY());
     }
 
     void moveWest() {
-        this.positionX--;
+        this.coordinates = new Coordinates(this.getCoordinates().getPositionX()-1, this.getCoordinates().getPositionY());
     }
 
     void moveNorth() {
-        this.positionY++;
+        this.coordinates = new Coordinates(this.getCoordinates().getPositionX(), this.getCoordinates().getPositionY()+1);
     }
 
     void moveSouth() {
-        this.positionY--;
-    }
-
-    void turnEast() {
-        this.roverDirection = new East();
-    }
-
-    void turnWest() {
-        this.roverDirection = new West();
-    }
-
-    void turnNorth() {
-        this.roverDirection = new North();
-    }
-
-    void turnSouth() {
-        this.roverDirection = new South();
+        this.coordinates = new Coordinates(this.getCoordinates().getPositionX(), this.getCoordinates().getPositionY()-1);
     }
 
     public void move(String command) {
