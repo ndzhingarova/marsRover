@@ -9,13 +9,9 @@ public enum Direction {
     private String value;
     private RoverDirection roverDirection;
 
-    Direction(String w, RoverDirection roverDirection) {
-        this.value = w;
+    Direction(String value, RoverDirection roverDirection) {
+        this.value = value;
         this.roverDirection = roverDirection;
-    }
-
-    public String getValue() {
-        return value;
     }
 
     public static RoverDirection fromString(String text) {

@@ -1,7 +1,6 @@
 package mars;
 
-import mars.direction.Direction;
-import mars.direction.RoverDirection;
+import mars.direction.*;
 
 public class Rover {
 
@@ -48,7 +47,6 @@ public class Rover {
         this.positionX++;
     }
 
-
     public void moveWest() {
         this.positionX--;
     }
@@ -61,4 +59,27 @@ public class Rover {
         this.positionY--;
     }
 
+    public void turnRight() {
+        this.roverDirection.turnRight(this);
+    }
+
+    public void turnEast() {
+        this.roverDirection = new East();
+    }
+
+    public void turnWest() {
+        this.roverDirection = new West();
+    }
+
+    public void turnNorth() {
+        this.roverDirection = new North();
+    }
+
+    public void turnSouth() {
+        this.roverDirection = new South();
+    }
+
+    public void turnLeft() {
+        this.roverDirection.turnLeft(this);
+    }
 }

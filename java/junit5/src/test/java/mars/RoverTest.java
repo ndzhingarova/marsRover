@@ -36,26 +36,6 @@ class RoverTest {
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/moveFWD.csv", numLinesToSkip = 1)
-    void moveForwardCommand(
-            int positionX,
-            int positionY,
-            String direction,
-            int expectedPositionX,
-            int expectedPositionY,
-            String expectedDirection) {
-        Rover rover = new Rover(positionX,positionY, direction);
-        RoverCommand moveForward = new MoveForwardCommand(rover);
-
-        CommandExecutor commandExecutor = new CommandExecutor();
-        commandExecutor.executeCommand(moveForward);
-
-        assertEquals(expectedPositionX, rover.getPositionX());
-        assertEquals(expectedPositionY, rover.getPositionY());
-        assertEquals(Direction.fromString(expectedDirection), rover.getRoverDirection());
-    }
-
-    @ParameterizedTest
     @CsvFileSource(resources = "/moveBWD.csv", numLinesToSkip = 1)
     void moveBackwardCommand(
             int positionX,
@@ -65,13 +45,36 @@ class RoverTest {
             int expectedPositionY,
             String expectedDirection) {
         Rover rover = new Rover(positionX,positionY, direction);
-        RoverCommand moveBackward = new MoveBackwardComand(rover);
-
-        CommandExecutor commandExecutor = new CommandExecutor();
-        commandExecutor.executeCommand(moveBackward);
+        rover.moveBackward();
 
         assertEquals(expectedPositionX, rover.getPositionX());
         assertEquals(expectedPositionY, rover.getPositionY());
+        assertEquals(Direction.fromString(expectedDirection), rover.getRoverDirection());
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/turnRight.csv", numLinesToSkip = 1)
+    void turnRightCommand(
+            int positionX,
+            int positionY,
+            String direction,
+            String expectedDirection) {
+
+        Rover rover = new Rover(positionX,positionY, direction);
+        rover.turnRight();
+        assertEquals(Direction.fromString(expectedDirection), rover.getRoverDirection());
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/turnLeft.csv", numLinesToSkip = 1)
+    void turnLeftCommand(
+            int positionX,
+            int positionY,
+            String direction,
+            String expectedDirection) {
+
+        Rover rover = new Rover(positionX,positionY, direction);
+        rover.turnLeft();
         assertEquals(Direction.fromString(expectedDirection), rover.getRoverDirection());
     }
 }

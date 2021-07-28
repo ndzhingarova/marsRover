@@ -8,4 +8,7 @@ public interface RoverDirection {
 
     void moveBackward(Rover rover);
 
+    void turnRight(Rover rover);
+
+    void turnLeft(Rover rover);
 }

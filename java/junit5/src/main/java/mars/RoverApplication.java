@@ -5,10 +5,7 @@ public class RoverApplication {
         Rover rover = new Rover(10,10,"e");
         System.out.println(rover);
 
-        RoverCommand moveForward = new MoveForwardCommand(rover);
-
-        CommandExecutor commandExecutor = new CommandExecutor();
-        commandExecutor.executeCommand(moveForward);
+        rover.moveForward();
 
         System.out.println(rover);
     }
