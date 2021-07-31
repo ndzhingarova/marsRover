@@ -51,20 +51,6 @@ public class Rover {
     }
 
     public void move(String command) {
-        switch (command) {
-            case "F":
-                this.goForward();
-                break;
-            case "B":
-                this.goBackward();
-                break;
-            case "R":
-                this.turnRight();
-                break;
-            case "L":
-                this.turnLeft();
-                break;
-            default:
-        }
+        Command.valueOf(command).execute(this);
     }
 }

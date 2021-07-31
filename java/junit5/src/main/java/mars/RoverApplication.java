@@ -7,7 +7,7 @@ public class RoverApplication {
         Rover rover = new Rover(10,10,"e");
         System.out.println(rover);
 
-        rover.goForward();
+        rover.move("B");
 
         System.out.println(rover);
     }
