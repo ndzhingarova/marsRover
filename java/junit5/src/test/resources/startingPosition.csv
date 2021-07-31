@@ -1,0 +1,14 @@
+positionX,positionY,direction
+0,0,NORTH
+10,145,EAST
+3256,10246,SOUTH
+124,145,WEST
+0,0,N
+10,145,E
+3256,10246,S
+124,145,W
+0,0,n
+10,145,e
+3256,10246,s
+124,145,w
+124,145,west
