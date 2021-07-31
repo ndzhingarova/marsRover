@@ -4,4 +4,3 @@ positionX,positionY,direction,expectedPositionX,expectedPositionY,expectedDirect
 10,10,SOUTH,R,10,10,WEST
 10,10,WEST,F,9,10,w
 10,10,NORTH,L,10,10,WEST
-10,10,NORTH,A,10,10,WEST

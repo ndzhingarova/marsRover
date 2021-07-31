@@ -1,6 +1,8 @@
 package mars;
 
 import mars.direction.Rover;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -98,5 +100,13 @@ class RoverTest {
 
         Rover expected = new Rover(expectedPositionX, expectedPositionY, expectedDirection);
         assertEquals(expected, rover);
+    }
+
+    @Test
+    void invalidMoveCommandThrows() {
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new Rover(10,10, "N")
+                .move("A"));
+
     }
 }
