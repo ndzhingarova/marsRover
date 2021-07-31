@@ -1,4 +1,7 @@
-package mars.direction;
+package mars.model;
+
+import mars.direction.Direction;
+import mars.direction.RoverDirection;
 
 import java.util.Objects;
 

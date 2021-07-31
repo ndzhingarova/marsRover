@@ -1,5 +1,7 @@
 package mars.direction;
 
+import mars.model.Coordinates;
+
 import java.util.Objects;
 
 public class East implements RoverDirection {

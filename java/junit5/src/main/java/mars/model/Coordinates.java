@@ -1,4 +1,4 @@
-package mars.direction;
+package mars.model;
 
 import java.util.Objects;
 

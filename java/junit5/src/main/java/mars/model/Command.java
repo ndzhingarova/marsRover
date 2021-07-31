@@ -1,4 +1,4 @@
-package mars.direction;
+package mars.model;
 
 public enum Command {
 

@@ -1,8 +1,8 @@
 package mars;
 
-import mars.direction.Rover;
+import mars.model.Rover;
 
-public class RoverApplication {
+public class Application {
     public static void main(String []args) {
         Rover rover = new Rover(10,10,"e");
         System.out.println(rover);

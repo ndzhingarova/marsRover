@@ -1,5 +1,7 @@
 package mars.direction;
 
+import mars.model.Coordinates;
+
 public enum Direction {
     NORTH("N", new North()),
     EAST("E", new East()),
@@ -24,5 +26,4 @@ public enum Direction {
         }
         throw new IllegalArgumentException("Invalid value for mars.direction.Direction: " + text);
     }
-
 }

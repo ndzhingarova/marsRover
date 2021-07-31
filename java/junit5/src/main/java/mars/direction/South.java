@@ -1,8 +1,10 @@
 package mars.direction;
 
+import mars.model.Coordinates;
+
 import java.util.Objects;
 
-public class South implements RoverDirection{
+public class South implements RoverDirection {
     @Override
     public Coordinates goForward(Coordinates coordinates) {
         return coordinates.moveSouth();
